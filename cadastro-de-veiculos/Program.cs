@@ -8,7 +8,7 @@
             ApplicationConfiguration.Initialize();
 
             // O Application.Run será descomentado assim que o FormPrincipal (MDI) for adicionado
-            // Application.Run(new FormPrincipal());
+             Application.Run(new Form1());
         }
     }
 }
