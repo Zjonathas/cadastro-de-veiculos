@@ -20,5 +20,15 @@ namespace cadastro_de_veiculos
         {
 
         }
+
+        private void novoCadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -33,13 +33,15 @@
             novoCadastroToolStripMenuItem = new ToolStripMenuItem();
             visualizarCadastrosToolStripMenuItem = new ToolStripMenuItem();
             excluirCadastrosToolStripMenuItem = new ToolStripMenuItem();
+            menuToolStripMenuItem = new ToolStripMenuItem();
+            sairToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, menuToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
@@ -56,21 +58,36 @@
             // novoCadastroToolStripMenuItem
             // 
             novoCadastroToolStripMenuItem.Name = "novoCadastroToolStripMenuItem";
-            novoCadastroToolStripMenuItem.Size = new Size(222, 26);
-            novoCadastroToolStripMenuItem.Text = "&Novo Cadastro";
+            novoCadastroToolStripMenuItem.Size = new Size(224, 26);
+            novoCadastroToolStripMenuItem.Text = "&Novo veículo";
+            novoCadastroToolStripMenuItem.Click += novoCadastroToolStripMenuItem_Click;
             // 
             // visualizarCadastrosToolStripMenuItem
             // 
             visualizarCadastrosToolStripMenuItem.Name = "visualizarCadastrosToolStripMenuItem";
-            visualizarCadastrosToolStripMenuItem.Size = new Size(222, 26);
+            visualizarCadastrosToolStripMenuItem.Size = new Size(224, 26);
             visualizarCadastrosToolStripMenuItem.Text = "&Visualizar cadastros";
             // 
             // excluirCadastrosToolStripMenuItem
             // 
             excluirCadastrosToolStripMenuItem.Name = "excluirCadastrosToolStripMenuItem";
-            excluirCadastrosToolStripMenuItem.Size = new Size(222, 26);
+            excluirCadastrosToolStripMenuItem.Size = new Size(224, 26);
             excluirCadastrosToolStripMenuItem.Text = "E&xcluir cadastros";
             excluirCadastrosToolStripMenuItem.Click += excluirCadastrosToolStripMenuItem_Click;
+            // 
+            // menuToolStripMenuItem
+            // 
+            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sairToolStripMenuItem });
+            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            menuToolStripMenuItem.Size = new Size(60, 24);
+            menuToolStripMenuItem.Text = "&Menu";
+            // 
+            // sairToolStripMenuItem
+            // 
+            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            sairToolStripMenuItem.Size = new Size(224, 26);
+            sairToolStripMenuItem.Text = "&Sair";
+            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -94,5 +111,7 @@
         private ToolStripMenuItem novoCadastroToolStripMenuItem;
         private ToolStripMenuItem visualizarCadastrosToolStripMenuItem;
         private ToolStripMenuItem excluirCadastrosToolStripMenuItem;
+        private ToolStripMenuItem menuToolStripMenuItem;
+        private ToolStripMenuItem sairToolStripMenuItem;
     }
 }
