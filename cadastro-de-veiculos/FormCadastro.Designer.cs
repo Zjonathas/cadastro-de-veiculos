@@ -34,14 +34,22 @@
             lbAnoFab = new Label();
             lbCor = new Label();
             lbPreco = new Label();
-            label1 = new Label();
-            comboBox1 = new ComboBox();
+            lbTipoComb = new Label();
+            cbTipoComb = new ComboBox();
+            txtPlaca = new TextBox();
+            txtMarca = new TextBox();
+            txtCor = new TextBox();
+            txtModelo = new TextBox();
+            txtAnoFab = new TextBox();
+            txtPreco = new TextBox();
+            btnCadastraVeiculo = new Button();
+            btnCancelarCadastro = new Button();
             SuspendLayout();
             // 
             // lbPlaca
             // 
             lbPlaca.AutoSize = true;
-            lbPlaca.Location = new Point(63, 34);
+            lbPlaca.Location = new Point(125, 34);
             lbPlaca.Name = "lbPlaca";
             lbPlaca.Size = new Size(47, 20);
             lbPlaca.TabIndex = 0;
@@ -50,7 +58,7 @@
             // lbMarca
             // 
             lbMarca.AutoSize = true;
-            lbMarca.Location = new Point(63, 69);
+            lbMarca.Location = new Point(125, 69);
             lbMarca.Name = "lbMarca";
             lbMarca.Size = new Size(53, 20);
             lbMarca.TabIndex = 1;
@@ -77,7 +85,7 @@
             // lbCor
             // 
             lbCor.AutoSize = true;
-            lbCor.Location = new Point(63, 111);
+            lbCor.Location = new Point(125, 111);
             lbCor.Name = "lbCor";
             lbCor.Size = new Size(35, 20);
             lbCor.TabIndex = 4;
@@ -92,31 +100,101 @@
             lbPreco.TabIndex = 5;
             lbPreco.Text = "Preço:";
             // 
-            // label1
+            // lbTipoComb
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(63, 153);
-            label1.Name = "label1";
-            label1.Size = new Size(147, 20);
-            label1.TabIndex = 6;
-            label1.Text = "Tipo de combustível:";
+            lbTipoComb.AutoSize = true;
+            lbTipoComb.Location = new Point(25, 156);
+            lbTipoComb.Name = "lbTipoComb";
+            lbTipoComb.Size = new Size(147, 20);
+            lbTipoComb.TabIndex = 6;
+            lbTipoComb.Text = "Tipo de combustível:";
             // 
-            // comboBox1
+            // cbTipoComb
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Gasolina", "Flex", "Diesel", "Elétrico" });
-            comboBox1.Location = new Point(216, 153);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 7;
+            cbTipoComb.FormattingEnabled = true;
+            cbTipoComb.Items.AddRange(new object[] { "Gasolina", "Flex", "Diesel", "Elétrico" });
+            cbTipoComb.Location = new Point(178, 153);
+            cbTipoComb.Name = "cbTipoComb";
+            cbTipoComb.Size = new Size(151, 28);
+            cbTipoComb.TabIndex = 7;
+            // 
+            // txtPlaca
+            // 
+            txtPlaca.Location = new Point(178, 31);
+            txtPlaca.Name = "txtPlaca";
+            txtPlaca.Size = new Size(125, 27);
+            txtPlaca.TabIndex = 8;
+            txtPlaca.TextChanged += txtPlaca_TextChanged;
+            // 
+            // txtMarca
+            // 
+            txtMarca.Location = new Point(178, 69);
+            txtMarca.Name = "txtMarca";
+            txtMarca.Size = new Size(125, 27);
+            txtMarca.TabIndex = 9;
+            // 
+            // txtCor
+            // 
+            txtCor.Location = new Point(178, 108);
+            txtCor.Name = "txtCor";
+            txtCor.Size = new Size(125, 27);
+            txtCor.TabIndex = 10;
+            // 
+            // txtModelo
+            // 
+            txtModelo.Location = new Point(506, 34);
+            txtModelo.Name = "txtModelo";
+            txtModelo.Size = new Size(125, 27);
+            txtModelo.TabIndex = 11;
+            // 
+            // txtAnoFab
+            // 
+            txtAnoFab.Location = new Point(506, 69);
+            txtAnoFab.Name = "txtAnoFab";
+            txtAnoFab.Size = new Size(125, 27);
+            txtAnoFab.TabIndex = 12;
+            // 
+            // txtPreco
+            // 
+            txtPreco.Location = new Point(506, 111);
+            txtPreco.Name = "txtPreco";
+            txtPreco.Size = new Size(125, 27);
+            txtPreco.TabIndex = 13;
+            // 
+            // btnCadastraVeiculo
+            // 
+            btnCadastraVeiculo.Location = new Point(85, 212);
+            btnCadastraVeiculo.Name = "btnCadastraVeiculo";
+            btnCadastraVeiculo.Size = new Size(150, 29);
+            btnCadastraVeiculo.TabIndex = 14;
+            btnCadastraVeiculo.Text = "cadastrar veículo";
+            btnCadastraVeiculo.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelarCadastro
+            // 
+            btnCancelarCadastro.Location = new Point(506, 212);
+            btnCancelarCadastro.Name = "btnCancelarCadastro";
+            btnCancelarCadastro.Size = new Size(155, 29);
+            btnCancelarCadastro.TabIndex = 15;
+            btnCancelarCadastro.Text = "Cancelar cadastro";
+            btnCancelarCadastro.UseVisualStyleBackColor = true;
+            btnCancelarCadastro.Click += button2_Click;
             // 
             // FormCadastro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(comboBox1);
-            Controls.Add(label1);
+            Controls.Add(btnCancelarCadastro);
+            Controls.Add(btnCadastraVeiculo);
+            Controls.Add(txtPreco);
+            Controls.Add(txtAnoFab);
+            Controls.Add(txtModelo);
+            Controls.Add(txtCor);
+            Controls.Add(txtMarca);
+            Controls.Add(txtPlaca);
+            Controls.Add(cbTipoComb);
+            Controls.Add(lbTipoComb);
             Controls.Add(lbPreco);
             Controls.Add(lbCor);
             Controls.Add(lbAnoFab);
@@ -137,7 +215,15 @@
         private Label lbAnoFab;
         private Label lbCor;
         private Label lbPreco;
-        private Label label1;
-        private ComboBox comboBox1;
+        private Label lbTipoComb;
+        private ComboBox cbTipoComb;
+        private TextBox txtPlaca;
+        private TextBox txtMarca;
+        private TextBox txtCor;
+        private TextBox txtModelo;
+        private TextBox txtAnoFab;
+        private TextBox txtPreco;
+        private Button btnCadastraVeiculo;
+        private Button btnCancelarCadastro;
     }
 }

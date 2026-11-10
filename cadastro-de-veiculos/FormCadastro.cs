@@ -13,6 +13,16 @@ namespace cadastro_de_veiculos
         public FormCadastro()
         {
             InitializeComponent();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtPlaca_TextChanged(object sender, EventArgs e)
+        {
             
         }
     }
