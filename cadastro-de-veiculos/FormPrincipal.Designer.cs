@@ -1,6 +1,6 @@
 ﻿namespace cadastro_de_veiculos
 {
-    partial class Form1
+    partial class FormPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,8 @@
             excluirCadastrosToolStripMenuItem = new ToolStripMenuItem();
             menuToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
+            txtVisuCadastro = new TextBox();
+            lbVisuVeiculos = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,20 +60,20 @@
             // novoCadastroToolStripMenuItem
             // 
             novoCadastroToolStripMenuItem.Name = "novoCadastroToolStripMenuItem";
-            novoCadastroToolStripMenuItem.Size = new Size(224, 26);
+            novoCadastroToolStripMenuItem.Size = new Size(222, 26);
             novoCadastroToolStripMenuItem.Text = "&Novo veículo";
             novoCadastroToolStripMenuItem.Click += novoCadastroToolStripMenuItem_Click;
             // 
             // visualizarCadastrosToolStripMenuItem
             // 
             visualizarCadastrosToolStripMenuItem.Name = "visualizarCadastrosToolStripMenuItem";
-            visualizarCadastrosToolStripMenuItem.Size = new Size(224, 26);
+            visualizarCadastrosToolStripMenuItem.Size = new Size(222, 26);
             visualizarCadastrosToolStripMenuItem.Text = "&Visualizar cadastros";
             // 
             // excluirCadastrosToolStripMenuItem
             // 
             excluirCadastrosToolStripMenuItem.Name = "excluirCadastrosToolStripMenuItem";
-            excluirCadastrosToolStripMenuItem.Size = new Size(224, 26);
+            excluirCadastrosToolStripMenuItem.Size = new Size(222, 26);
             excluirCadastrosToolStripMenuItem.Text = "E&xcluir cadastros";
             excluirCadastrosToolStripMenuItem.Click += excluirCadastrosToolStripMenuItem_Click;
             // 
@@ -85,18 +87,41 @@
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(224, 26);
+            sairToolStripMenuItem.Size = new Size(117, 26);
             sairToolStripMenuItem.Text = "&Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
-            // Form1
+            // txtVisuCadastro
+            // 
+            txtVisuCadastro.BorderStyle = BorderStyle.FixedSingle;
+            txtVisuCadastro.Location = new Point(155, 113);
+            txtVisuCadastro.Multiline = true;
+            txtVisuCadastro.Name = "txtVisuCadastro";
+            txtVisuCadastro.ReadOnly = true;
+            txtVisuCadastro.Size = new Size(353, 176);
+            txtVisuCadastro.TabIndex = 1;
+            txtVisuCadastro.Visible = false;
+            // 
+            // lbVisuVeiculos
+            // 
+            lbVisuVeiculos.AutoSize = true;
+            lbVisuVeiculos.Location = new Point(155, 90);
+            lbVisuVeiculos.Name = "lbVisuVeiculos";
+            lbVisuVeiculos.Size = new Size(253, 20);
+            lbVisuVeiculos.TabIndex = 2;
+            lbVisuVeiculos.Text = "Visualização de veículos cadastrados";
+            lbVisuVeiculos.Visible = false;
+            // 
+            // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbVisuVeiculos);
+            Controls.Add(txtVisuCadastro);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "FormPrincipal";
             Text = "Cadastro de veículos";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -113,5 +138,7 @@
         private ToolStripMenuItem excluirCadastrosToolStripMenuItem;
         private ToolStripMenuItem menuToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
+        private TextBox txtVisuCadastro;
+        private Label lbVisuVeiculos;
     }
 }

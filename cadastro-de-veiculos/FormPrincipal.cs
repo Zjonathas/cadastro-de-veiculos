@@ -8,12 +8,19 @@ using System.Windows.Forms;
 
 namespace cadastro_de_veiculos
 {
-    public partial class Form1 : Form
+    public partial class FormPrincipal : Form
     {
-        public Form1()
+        public FormPrincipal()
         {
             InitializeComponent();
-            Show();
+            IsMdiContainer = true;
+        }
+
+        public void AbrirCadastro()
+        {
+            var form = new FormCadastro();
+            form.MdiParent = this;
+            form.Show();
         }
 
         private void excluirCadastrosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -23,7 +30,7 @@ namespace cadastro_de_veiculos
 
         private void novoCadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AbrirCadastro();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
