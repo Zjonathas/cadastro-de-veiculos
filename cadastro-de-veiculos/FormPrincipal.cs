@@ -41,5 +41,16 @@ namespace cadastro_de_veiculos
                 Close();
             }
         }
+
+        private void visualizarCadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtVisuCadastro.Visible = true;
+            lbVisuVeiculos.Visible = true;
+        }
+
+        private void txtVisuCadastro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

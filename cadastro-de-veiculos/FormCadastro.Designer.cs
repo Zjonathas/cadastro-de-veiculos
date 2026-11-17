@@ -163,7 +163,7 @@
             // 
             // btnCadastraVeiculo
             // 
-            btnCadastraVeiculo.Location = new Point(85, 212);
+            btnCadastraVeiculo.Location = new Point(178, 212);
             btnCadastraVeiculo.Name = "btnCadastraVeiculo";
             btnCadastraVeiculo.Size = new Size(150, 29);
             btnCadastraVeiculo.TabIndex = 14;
@@ -172,7 +172,7 @@
             // 
             // btnCancelarCadastro
             // 
-            btnCancelarCadastro.Location = new Point(506, 212);
+            btnCancelarCadastro.Location = new Point(476, 212);
             btnCancelarCadastro.Name = "btnCancelarCadastro";
             btnCancelarCadastro.Size = new Size(155, 29);
             btnCancelarCadastro.TabIndex = 15;
