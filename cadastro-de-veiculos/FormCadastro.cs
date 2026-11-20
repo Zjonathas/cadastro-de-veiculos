@@ -23,7 +23,18 @@ namespace cadastro_de_veiculos
 
         private void txtPlaca_TextChanged(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btnLimparForm_Click(object sender, EventArgs e)
+        {
+            txtPlaca.Text = string.Empty;
+            txtAnoFab.Text = string.Empty;
+            txtCor.Text = string.Empty;
+            txtModelo.Text = string.Empty;
+            txtMarca.Text = string.Empty;
+            txtPreco.Text = string.Empty;
+            cbTipoComb.Text = string.Empty;
         }
     }
 }

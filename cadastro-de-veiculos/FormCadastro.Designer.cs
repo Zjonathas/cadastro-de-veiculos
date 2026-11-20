@@ -44,6 +44,7 @@
             txtPreco = new TextBox();
             btnCadastraVeiculo = new Button();
             btnCancelarCadastro = new Button();
+            btnLimparForm = new Button();
             SuspendLayout();
             // 
             // lbPlaca
@@ -116,14 +117,14 @@
             cbTipoComb.Location = new Point(178, 153);
             cbTipoComb.Name = "cbTipoComb";
             cbTipoComb.Size = new Size(151, 28);
-            cbTipoComb.TabIndex = 7;
+            cbTipoComb.TabIndex = 4;
             // 
             // txtPlaca
             // 
             txtPlaca.Location = new Point(178, 31);
             txtPlaca.Name = "txtPlaca";
             txtPlaca.Size = new Size(125, 27);
-            txtPlaca.TabIndex = 8;
+            txtPlaca.TabIndex = 1;
             txtPlaca.TextChanged += txtPlaca_TextChanged;
             // 
             // txtMarca
@@ -131,60 +132,71 @@
             txtMarca.Location = new Point(178, 69);
             txtMarca.Name = "txtMarca";
             txtMarca.Size = new Size(125, 27);
-            txtMarca.TabIndex = 9;
+            txtMarca.TabIndex = 2;
             // 
             // txtCor
             // 
             txtCor.Location = new Point(178, 108);
             txtCor.Name = "txtCor";
             txtCor.Size = new Size(125, 27);
-            txtCor.TabIndex = 10;
+            txtCor.TabIndex = 3;
             // 
             // txtModelo
             // 
             txtModelo.Location = new Point(506, 34);
             txtModelo.Name = "txtModelo";
             txtModelo.Size = new Size(125, 27);
-            txtModelo.TabIndex = 11;
+            txtModelo.TabIndex = 5;
             // 
             // txtAnoFab
             // 
             txtAnoFab.Location = new Point(506, 69);
             txtAnoFab.Name = "txtAnoFab";
             txtAnoFab.Size = new Size(125, 27);
-            txtAnoFab.TabIndex = 12;
+            txtAnoFab.TabIndex = 6;
             // 
             // txtPreco
             // 
             txtPreco.Location = new Point(506, 111);
             txtPreco.Name = "txtPreco";
             txtPreco.Size = new Size(125, 27);
-            txtPreco.TabIndex = 13;
+            txtPreco.TabIndex = 7;
             // 
             // btnCadastraVeiculo
             // 
-            btnCadastraVeiculo.Location = new Point(178, 212);
+            btnCadastraVeiculo.Location = new Point(125, 212);
             btnCadastraVeiculo.Name = "btnCadastraVeiculo";
             btnCadastraVeiculo.Size = new Size(150, 29);
-            btnCadastraVeiculo.TabIndex = 14;
-            btnCadastraVeiculo.Text = "cadastrar veículo";
+            btnCadastraVeiculo.TabIndex = 8;
+            btnCadastraVeiculo.Text = "Cadastrar veículo";
             btnCadastraVeiculo.UseVisualStyleBackColor = true;
             // 
             // btnCancelarCadastro
             // 
-            btnCancelarCadastro.Location = new Point(476, 212);
+            btnCancelarCadastro.Location = new Point(506, 212);
             btnCancelarCadastro.Name = "btnCancelarCadastro";
             btnCancelarCadastro.Size = new Size(155, 29);
-            btnCancelarCadastro.TabIndex = 15;
+            btnCancelarCadastro.TabIndex = 10;
             btnCancelarCadastro.Text = "Cancelar cadastro";
             btnCancelarCadastro.UseVisualStyleBackColor = true;
             btnCancelarCadastro.Click += button2_Click;
+            // 
+            // btnLimparForm
+            // 
+            btnLimparForm.Location = new Point(323, 212);
+            btnLimparForm.Name = "btnLimparForm";
+            btnLimparForm.Size = new Size(151, 29);
+            btnLimparForm.TabIndex = 9;
+            btnLimparForm.Text = "Limpar formulário";
+            btnLimparForm.UseVisualStyleBackColor = true;
+            btnLimparForm.Click += btnLimparForm_Click;
             // 
             // FormCadastro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnLimparForm);
             Controls.Add(btnCancelarCadastro);
             Controls.Add(btnCadastraVeiculo);
             Controls.Add(txtPreco);
@@ -225,5 +237,6 @@
         private TextBox txtPreco;
         private Button btnCadastraVeiculo;
         private Button btnCancelarCadastro;
+        private Button btnLimparForm;
     }
 }

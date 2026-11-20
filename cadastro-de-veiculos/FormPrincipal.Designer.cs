@@ -60,21 +60,21 @@
             // novoCadastroToolStripMenuItem
             // 
             novoCadastroToolStripMenuItem.Name = "novoCadastroToolStripMenuItem";
-            novoCadastroToolStripMenuItem.Size = new Size(224, 26);
+            novoCadastroToolStripMenuItem.Size = new Size(222, 26);
             novoCadastroToolStripMenuItem.Text = "&Novo veículo";
             novoCadastroToolStripMenuItem.Click += novoCadastroToolStripMenuItem_Click;
             // 
             // visualizarCadastrosToolStripMenuItem
             // 
             visualizarCadastrosToolStripMenuItem.Name = "visualizarCadastrosToolStripMenuItem";
-            visualizarCadastrosToolStripMenuItem.Size = new Size(224, 26);
+            visualizarCadastrosToolStripMenuItem.Size = new Size(222, 26);
             visualizarCadastrosToolStripMenuItem.Text = "&Visualizar cadastros";
             visualizarCadastrosToolStripMenuItem.Click += visualizarCadastrosToolStripMenuItem_Click;
             // 
             // excluirCadastrosToolStripMenuItem
             // 
             excluirCadastrosToolStripMenuItem.Name = "excluirCadastrosToolStripMenuItem";
-            excluirCadastrosToolStripMenuItem.Size = new Size(224, 26);
+            excluirCadastrosToolStripMenuItem.Size = new Size(222, 26);
             excluirCadastrosToolStripMenuItem.Text = "E&xcluir cadastros";
             excluirCadastrosToolStripMenuItem.Click += excluirCadastrosToolStripMenuItem_Click;
             // 

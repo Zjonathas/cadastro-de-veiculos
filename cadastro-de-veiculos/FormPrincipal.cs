@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cadastro_de_veiculos.Persistencia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,8 @@ namespace cadastro_de_veiculos
         private void novoCadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirCadastro();
+            txtVisuCadastro.Visible = false;
+            lbVisuVeiculos.Visible = false;
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,11 +49,12 @@ namespace cadastro_de_veiculos
         {
             txtVisuCadastro.Visible = true;
             lbVisuVeiculos.Visible = true;
+            txtVisuCadastro.Text = "Visualização";
         }
 
         private void txtVisuCadastro_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
