@@ -1,4 +1,4 @@
-﻿namespace cadastro_de_veiculos
+namespace cadastro_de_veiculos
 {
     partial class FormPrincipal
     {
@@ -69,6 +69,7 @@
             visualizarCadastrosToolStripMenuItem.Name = "visualizarCadastrosToolStripMenuItem";
             visualizarCadastrosToolStripMenuItem.Size = new Size(222, 26);
             visualizarCadastrosToolStripMenuItem.Text = "&Visualizar cadastros";
+            visualizarCadastrosToolStripMenuItem.Click += visualizarCadastrosToolStripMenuItem_Click;
             // 
             // excluirCadastrosToolStripMenuItem
             // 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +21,29 @@ namespace cadastro_de_veiculos
             var form = new FormCadastro();
             form.MdiParent = this;
             form.Show();
+        }
+
+        public void AbrirListagem()
+        {
+            foreach (Form child in MdiChildren)
+            {
+                if (child is FormListagem formAberto)
+                {
+                    formAberto.CarregarVeiculos();
+                    formAberto.BringToFront();
+                    formAberto.Focus();
+                    return;
+                }
+            }
+
+            var form = new FormListagem();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void visualizarCadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirListagem();
         }
 
         private void excluirCadastrosToolStripMenuItem_Click(object sender, EventArgs e)
