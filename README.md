@@ -32,10 +32,18 @@ O sistema permite gerenciar cadastros de veículos de forma intuitiva, utilizand
   - Ações para salvar ou cancelar o preenchimento.
 
 - [x] **Listagem e Consulta (`FormListagem`)**:
-  - Janela MDI filha para visualização tabular dos dados via `DataGridView`.
-  - Exibição organizada com cabeçalhos claros e formatação adequada (ex.: preço no padrão monetário `C2`).
-  - Botão de **Atualizar** para sincronizar os dados em tempo real com o arquivo JSON.
-  - Indicador dinâmico de **Total de veículos cadastrados**.
+  - Janela MDI filha para visualização dos registros em formato tabular.
+  - **Grid de Dados (`DataGridView`) altamente configurada**:
+    - Proteção contra edição acidental (`ReadOnly = true`, `AllowUserToAddRows = false`, `AllowUserToDeleteRows = false`).
+    - Seleção por linha completa (`SelectionMode = FullRowSelect`, `MultiSelect = false`).
+    - Cabeçalhos estilizados em negrito (`Segoe UI 9.5pt Bold`) e com altura confortável.
+    - Alinhamentos específicos: centralizado para *Placa* e *Ano Fab.*, alinhado à direita para *Preço* e à esquerda para os demais campos.
+    - Formatação monetária brasileira rigorosa (`pt-BR`, máscara `C2`), exibindo valores formatados como `R$ 0,00`.
+  - **Ciclo de Vida e Atualização**:
+    - Disparo automático no evento de carregamento do formulário (`FormListagem_Load`) para buscar os dados serializados em disco (`veiculos.json`).
+    - Botão de **Atualizar** para forçar sincronização manual a qualquer momento.
+    - Botão de **Fechar** para encerramento limpo da janela filha.
+    - Feedback dinâmico no rodapé com o total de registros ou aviso amigável quando a lista estiver vazia.
 
 - [x] **Persistência de Dados (`VeiculoRepositorio`)**:
   - Armazenamento dos dados no arquivo `veiculos.json` no diretório de execução.
