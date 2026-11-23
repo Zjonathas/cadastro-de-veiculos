@@ -1,4 +1,7 @@
+//<<<<<<< HEAD
 ﻿using cadastro_de_veiculos.Persistencia;
+//=======
+//>>>>>>> b71b822cfa4e085a4d227292ae4721a62a910c3
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +27,25 @@ namespace cadastro_de_veiculos
             form.Show();
         }
 
+        public void AbrirListagem()
+        {
+            foreach (Form child in MdiChildren)
+            {
+                if (child is FormListagem formAberto)
+                {
+                    formAberto.CarregarVeiculos();
+                    formAberto.BringToFront();
+                    formAberto.Focus();
+                    return;
+                }
+            }
+
+            var form = new FormListagem();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+
         private void excluirCadastrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -47,9 +69,7 @@ namespace cadastro_de_veiculos
 
         private void visualizarCadastrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtVisuCadastro.Visible = true;
-            lbVisuVeiculos.Visible = true;
-            txtVisuCadastro.Text = "Visualização";
+            AbrirListagem();
         }
 
         private void txtVisuCadastro_TextChanged(object sender, EventArgs e)

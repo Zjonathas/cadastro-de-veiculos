@@ -1,4 +1,4 @@
-﻿namespace cadastro_de_veiculos
+namespace cadastro_de_veiculos
 {
     partial class FormPrincipal
     {

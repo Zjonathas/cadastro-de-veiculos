@@ -1,4 +1,6 @@
-﻿using System;
+﻿using cadastro_de_veiculos.Models;
+using cadastro_de_veiculos.Persistencia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +37,19 @@ namespace cadastro_de_veiculos
             txtMarca.Text = string.Empty;
             txtPreco.Text = string.Empty;
             cbTipoComb.Text = string.Empty;
+        }
+
+        public void CadastrarVeiculos()
+        {
+            var arquivo = new VeiculoRepositorio();
+            var veiculo = new Veiculo();
+            veiculo.Cor = txtCor.Text.Trim();
+            veiculo.AnoFabricacao = Convert.ToInt32(txtAnoFab.Text);
+            veiculo.Marca = txtMarca.Text.Trim();
+            veiculo.Placa = txtPlaca.Text.Trim();
+            veiculo.Preco = Convert.ToDecimal(txtPreco.Text);
+            veiculo.TipoCombustivel = cbTipoComb.Text;
+            
         }
     }
 }
