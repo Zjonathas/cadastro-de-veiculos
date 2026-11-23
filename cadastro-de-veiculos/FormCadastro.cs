@@ -28,7 +28,7 @@ namespace cadastro_de_veiculos
 
         }
 
-        private void btnLimparForm_Click(object sender, EventArgs e)
+        public void LimparForm()
         {
             txtPlaca.Text = string.Empty;
             txtAnoFab.Text = string.Empty;
@@ -37,6 +37,11 @@ namespace cadastro_de_veiculos
             txtMarca.Text = string.Empty;
             txtPreco.Text = string.Empty;
             cbTipoComb.Text = string.Empty;
+        }
+
+        private void btnLimparForm_Click(object sender, EventArgs e)
+        {
+            LimparForm();
         }
 
         public void CadastrarVeiculos()
@@ -50,15 +55,14 @@ namespace cadastro_de_veiculos
                 Marca = txtMarca.Text.Trim(),
                 Modelo = txtModelo.Text.Trim(),
                 Placa = txtPlaca.Text.Trim(),
-                Preco = Convert.ToDecimal(txtPreco.Text),
-                TipoCombustivel = cbTipoComb.Text
+                Preco = Convert.ToDecimal(txtPreco.Text.Trim().Replace(",",".")),
+                TipoCombustivel = cbTipoComb.Text.Trim()
             };
 
             listaVeiculos.Add(veiculo);
             arquivo.SalvarDados(listaVeiculos);
-
+            LimparForm();
             MessageBox.Show("Veículo cadastrado com sucesso!");
-
         }
 
         private void btnCadastraVeiculo_Click(object sender, EventArgs e)
