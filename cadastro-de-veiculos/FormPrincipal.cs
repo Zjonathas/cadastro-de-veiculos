@@ -54,8 +54,6 @@ namespace cadastro_de_veiculos
         private void novoCadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirCadastro();
-            txtVisuCadastro.Visible = false;
-            lbVisuVeiculos.Visible = false;
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

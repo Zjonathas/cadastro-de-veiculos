@@ -42,14 +42,28 @@ namespace cadastro_de_veiculos
         public void CadastrarVeiculos()
         {
             var arquivo = new VeiculoRepositorio();
-            var veiculo = new Veiculo();
-            veiculo.Cor = txtCor.Text.Trim();
-            veiculo.AnoFabricacao = Convert.ToInt32(txtAnoFab.Text);
-            veiculo.Marca = txtMarca.Text.Trim();
-            veiculo.Placa = txtPlaca.Text.Trim();
-            veiculo.Preco = Convert.ToDecimal(txtPreco.Text);
-            veiculo.TipoCombustivel = cbTipoComb.Text;
-            
+            var listaVeiculos = arquivo.CarregarDados();
+            var veiculo = new Veiculo
+            {
+                Cor = txtCor.Text.Trim(),
+                AnoFabricacao = Convert.ToInt32(txtAnoFab.Text),
+                Marca = txtMarca.Text.Trim(),
+                Modelo = txtModelo.Text.Trim(),
+                Placa = txtPlaca.Text.Trim(),
+                Preco = Convert.ToDecimal(txtPreco.Text),
+                TipoCombustivel = cbTipoComb.Text
+            };
+
+            listaVeiculos.Add(veiculo);
+            arquivo.SalvarDados(listaVeiculos);
+
+            MessageBox.Show("Veículo cadastrado com sucesso!");
+
+        }
+
+        private void btnCadastraVeiculo_Click(object sender, EventArgs e)
+        {
+            CadastrarVeiculos();
         }
     }
 }

@@ -170,6 +170,7 @@
             btnCadastraVeiculo.TabIndex = 8;
             btnCadastraVeiculo.Text = "Cadastrar veículo";
             btnCadastraVeiculo.UseVisualStyleBackColor = true;
+            btnCadastraVeiculo.Click += btnCadastraVeiculo_Click;
             // 
             // btnCancelarCadastro
             // 
