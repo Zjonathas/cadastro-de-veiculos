@@ -1,3 +1,7 @@
+//<<<<<<< HEAD
+﻿using cadastro_de_veiculos.Persistencia;
+//=======
+//>>>>>>> b71b822cfa4e085a4d227292ae4721a62a910c3
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,39 +20,39 @@ namespace cadastro_de_veiculos
             IsMdiContainer = true;
         }
 
-        public void AbrirCadastro()
-        {
-            var form = new FormCadastro();
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        public void AbrirListagem()
+        private void AbrirFilhoMdi<TForm>(Func<TForm> criarForm, Action<TForm>? aoReabrir = null)
+            where TForm : Form
         {
             foreach (Form child in MdiChildren)
             {
-                if (child is FormListagem formAberto)
+                if (child is TForm formAberto)
                 {
-                    formAberto.CarregarVeiculos();
+                    aoReabrir?.Invoke(formAberto);
                     formAberto.BringToFront();
                     formAberto.Focus();
                     return;
                 }
             }
 
-            var form = new FormListagem();
+            var form = criarForm();
             form.MdiParent = this;
             form.Show();
         }
 
-        private void visualizarCadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        public void AbrirCadastro()
         {
-            AbrirListagem();
+            AbrirFilhoMdi(() => new FormCadastro());
         }
+
+        public void AbrirListagem()
+        {
+            AbrirFilhoMdi(() => new FormListagem(), formAberto => formAberto.CarregarVeiculos());
+        }
+
 
         private void excluirCadastrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AbrirCadastro();
         }
 
         private void novoCadastroToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,7 +62,21 @@ namespace cadastro_de_veiculos
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Deseja sair?", "Saindo", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
+
+        private void visualizarCadastrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirListagem();
+        }
+
+        private void txtVisuCadastro_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

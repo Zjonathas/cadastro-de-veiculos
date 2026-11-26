@@ -35,8 +35,6 @@ namespace cadastro_de_veiculos
             excluirCadastrosToolStripMenuItem = new ToolStripMenuItem();
             menuToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
-            txtVisuCadastro = new TextBox();
-            lbVisuVeiculos = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -92,34 +90,11 @@ namespace cadastro_de_veiculos
             sairToolStripMenuItem.Text = "&Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
-            // txtVisuCadastro
-            // 
-            txtVisuCadastro.BorderStyle = BorderStyle.FixedSingle;
-            txtVisuCadastro.Location = new Point(155, 113);
-            txtVisuCadastro.Multiline = true;
-            txtVisuCadastro.Name = "txtVisuCadastro";
-            txtVisuCadastro.ReadOnly = true;
-            txtVisuCadastro.Size = new Size(353, 176);
-            txtVisuCadastro.TabIndex = 1;
-            txtVisuCadastro.Visible = false;
-            // 
-            // lbVisuVeiculos
-            // 
-            lbVisuVeiculos.AutoSize = true;
-            lbVisuVeiculos.Location = new Point(155, 90);
-            lbVisuVeiculos.Name = "lbVisuVeiculos";
-            lbVisuVeiculos.Size = new Size(253, 20);
-            lbVisuVeiculos.TabIndex = 2;
-            lbVisuVeiculos.Text = "Visualização de veículos cadastrados";
-            lbVisuVeiculos.Visible = false;
-            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(lbVisuVeiculos);
-            Controls.Add(txtVisuCadastro);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "FormPrincipal";
@@ -139,7 +114,5 @@ namespace cadastro_de_veiculos
         private ToolStripMenuItem excluirCadastrosToolStripMenuItem;
         private ToolStripMenuItem menuToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
-        private TextBox txtVisuCadastro;
-        private Label lbVisuVeiculos;
     }
 }
