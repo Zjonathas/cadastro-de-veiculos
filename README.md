@@ -16,20 +16,30 @@ O sistema permite gerenciar cadastros de veículos de forma intuitiva, utilizand
 - [x] **Janela Principal MDI (`FormPrincipal`)**:
   - Funciona como container MDI principal da aplicação.
   - Barra de menus (`MenuStrip`) organizada por categorias:
-    - **Cadastro**: *Novo veículo*, *Visualizar cadastros*, *Excluir cadastros*.
-    - **Menu**: *Sair* (com confirmação e encerramento seguro).
-  - Gerenciamento inteligente de instâncias MDI filhas (evita duplicidade de janelas ao focar na janela já aberta).
+    - **Cadastro**: *Novo veículo* (`FormCadastro`), *Visualizar cadastros* (`FormListagem`) e *Excluir cadastros* (`FormCadastro`).
+    - **Menu**: *Sair* (com confirmação via `MessageBox` e encerramento seguro).
+  - Gerenciamento de instâncias MDI filhas via `AbrirFilhoMdi` (evita duplicidade de janelas, trazendo à frente e atualizando a janela já aberta).
 
-- [x] **Cadastro de Veículos (`FormCadastro`)**:
-  - Janela MDI filha para inclusão de novos registros.
+- [x] **Cadastro, Busca e Exclusão de Veículos (`FormCadastro`)**:
+  - Janela MDI filha para inclusão, consulta por placa e exclusão de veículos.
   - Campos de entrada:
     - **Placa**: Identificador único do veículo.
     - **Marca** e **Modelo**: Especificações do fabricante e modelo.
     - **Ano de Fabricação**: Ano do veículo.
     - **Cor**: Tonalidade do veículo.
     - **Preço**: Valor monetário.
-    - **Tipo de Combustível**: Seleção rápida via `ComboBox` (*Gasolina*, *Flex*, *Diesel*, *Elétrico*).
-  - Ações para salvar ou cancelar o preenchimento.
+    - **Tipo de Combustível**: Seleção via `ComboBox` (*Gasolina*, *Flex*, *Diesel*, *Elétrico*).
+  - **Cadastro com validação**:
+    - Verificação de preenchimento obrigatório em todos os campos.
+    - Validação de ano numérico válido (`1886` até o ano atual + 1) e preço válido maior que zero (aceitando vírgula ou ponto decimal).
+    - Prevenção de cadastro com placa duplicada e tratamento de erros de persistência.
+  - **Busca por placa (`Buscar`)**:
+    - Localiza o veículo pela placa (sem diferenciar maiúsculas/minúsculas e com suporte a comparação sem hífen) e preenche automaticamente os demais campos da tela.
+    - Limpa os detalhes e exibe aviso (`MessageBox`) caso nenhum veículo seja encontrado.
+  - **Exclusão (`Excluir veículo`)**:
+    - Solicita confirmação ao usuário via `MessageBox` exibindo os dados do veículo encontrado.
+    - Remove o registro da lista, atualiza o arquivo `veiculos.json` no disco e limpa todos os campos da tela.
+  - **Limpeza e Cancelamento**: Botões para limpar todos os campos (`Limpar formulário`) ou fechar a janela (`Cancelar cadastro`).
 
 - [x] **Listagem e Consulta (`FormListagem`)**:
   - Janela MDI filha para visualização dos registros em formato tabular.
@@ -60,7 +70,6 @@ O projeto adota os princípios de Programação Orientada a Objetos e divisão d
 cadastro-de-veiculos/
 │
 ├── .gitignore                          # Regras de exclusão do Git
-├── AGENTS.md                           # Diretrizes operacionais e catálogo de skills
 ├── README.md                           # Documentação geral do projeto
 │
 └── cadastro-de-veiculos/               # Diretório da Solution e Projeto
@@ -76,7 +85,7 @@ cadastro-de-veiculos/
     │
     └── Forms (Interface Gráfica)       # Camada de Apresentação
         ├── FormPrincipal.cs            # Janela MDI Container e Menus de Navegação
-        ├── FormCadastro.cs             # Formulário MDI Child para inclusão de veículos
+        ├── FormCadastro.cs             # Formulário MDI Child para inclusão, busca e exclusão
         └── FormListagem.cs             # Formulário MDI Child com DataGridView para visualização
 ```
 
