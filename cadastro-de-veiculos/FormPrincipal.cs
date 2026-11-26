@@ -20,35 +20,39 @@ namespace cadastro_de_veiculos
             IsMdiContainer = true;
         }
 
-        public void AbrirCadastro()
-        {
-            var form = new FormCadastro();
-            form.MdiParent = this;
-            form.Show();
-        }
-
-        public void AbrirListagem()
+        private void AbrirFilhoMdi<TForm>(Func<TForm> criarForm, Action<TForm>? aoReabrir = null)
+            where TForm : Form
         {
             foreach (Form child in MdiChildren)
             {
-                if (child is FormListagem formAberto)
+                if (child is TForm formAberto)
                 {
-                    formAberto.CarregarVeiculos();
+                    aoReabrir?.Invoke(formAberto);
                     formAberto.BringToFront();
                     formAberto.Focus();
                     return;
                 }
             }
 
-            var form = new FormListagem();
+            var form = criarForm();
             form.MdiParent = this;
             form.Show();
+        }
+
+        public void AbrirCadastro()
+        {
+            AbrirFilhoMdi(() => new FormCadastro());
+        }
+
+        public void AbrirListagem()
+        {
+            AbrirFilhoMdi(() => new FormListagem(), formAberto => formAberto.CarregarVeiculos());
         }
 
 
         private void excluirCadastrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AbrirCadastro();
         }
 
         private void novoCadastroToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿namespace cadastro_de_veiculos
+namespace cadastro_de_veiculos
 {
     partial class FormCadastro
     {
@@ -45,6 +45,8 @@
             btnCadastraVeiculo = new Button();
             btnCancelarCadastro = new Button();
             btnLimparForm = new Button();
+            btnBuscar = new Button();
+            btnExcluir = new Button();
             SuspendLayout();
             // 
             // lbPlaca
@@ -68,7 +70,7 @@
             // lbModelo
             // 
             lbModelo.AutoSize = true;
-            lbModelo.Location = new Point(388, 37);
+            lbModelo.Location = new Point(412, 37);
             lbModelo.Name = "lbModelo";
             lbModelo.Size = new Size(64, 20);
             lbModelo.TabIndex = 2;
@@ -77,7 +79,7 @@
             // lbAnoFab
             // 
             lbAnoFab.AutoSize = true;
-            lbAnoFab.Location = new Point(388, 69);
+            lbAnoFab.Location = new Point(412, 69);
             lbAnoFab.Name = "lbAnoFab";
             lbAnoFab.Size = new Size(113, 20);
             lbAnoFab.TabIndex = 3;
@@ -95,7 +97,7 @@
             // lbPreco
             // 
             lbPreco.AutoSize = true;
-            lbPreco.Location = new Point(388, 111);
+            lbPreco.Location = new Point(412, 111);
             lbPreco.Name = "lbPreco";
             lbPreco.Size = new Size(49, 20);
             lbPreco.TabIndex = 5;
@@ -143,28 +145,28 @@
             // 
             // txtModelo
             // 
-            txtModelo.Location = new Point(506, 34);
+            txtModelo.Location = new Point(530, 34);
             txtModelo.Name = "txtModelo";
             txtModelo.Size = new Size(125, 27);
             txtModelo.TabIndex = 5;
             // 
             // txtAnoFab
             // 
-            txtAnoFab.Location = new Point(506, 69);
+            txtAnoFab.Location = new Point(530, 69);
             txtAnoFab.Name = "txtAnoFab";
             txtAnoFab.Size = new Size(125, 27);
             txtAnoFab.TabIndex = 6;
             // 
             // txtPreco
             // 
-            txtPreco.Location = new Point(506, 111);
+            txtPreco.Location = new Point(530, 111);
             txtPreco.Name = "txtPreco";
             txtPreco.Size = new Size(125, 27);
             txtPreco.TabIndex = 7;
             // 
             // btnCadastraVeiculo
             // 
-            btnCadastraVeiculo.Location = new Point(125, 212);
+            btnCadastraVeiculo.Location = new Point(65, 212);
             btnCadastraVeiculo.Name = "btnCadastraVeiculo";
             btnCadastraVeiculo.Size = new Size(150, 29);
             btnCadastraVeiculo.TabIndex = 8;
@@ -174,29 +176,51 @@
             // 
             // btnCancelarCadastro
             // 
-            btnCancelarCadastro.Location = new Point(506, 212);
+            btnCancelarCadastro.Location = new Point(556, 212);
             btnCancelarCadastro.Name = "btnCancelarCadastro";
             btnCancelarCadastro.Size = new Size(155, 29);
-            btnCancelarCadastro.TabIndex = 10;
+            btnCancelarCadastro.TabIndex = 11;
             btnCancelarCadastro.Text = "Cancelar cadastro";
             btnCancelarCadastro.UseVisualStyleBackColor = true;
             btnCancelarCadastro.Click += button2_Click;
             // 
             // btnLimparForm
             // 
-            btnLimparForm.Location = new Point(323, 212);
+            btnLimparForm.Location = new Point(390, 212);
             btnLimparForm.Name = "btnLimparForm";
             btnLimparForm.Size = new Size(151, 29);
-            btnLimparForm.TabIndex = 9;
+            btnLimparForm.TabIndex = 10;
             btnLimparForm.Text = "Limpar formulário";
             btnLimparForm.UseVisualStyleBackColor = true;
             btnLimparForm.Click += btnLimparForm_Click;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Location = new Point(309, 30);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(80, 29);
+            btnBuscar.TabIndex = 12;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(230, 212);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(145, 29);
+            btnExcluir.TabIndex = 9;
+            btnExcluir.Text = "Excluir veículo";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // FormCadastro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnExcluir);
+            Controls.Add(btnBuscar);
             Controls.Add(btnLimparForm);
             Controls.Add(btnCancelarCadastro);
             Controls.Add(btnCadastraVeiculo);
@@ -215,7 +239,7 @@
             Controls.Add(lbMarca);
             Controls.Add(lbPlaca);
             Name = "FormCadastro";
-            Text = "FormCadastro";
+            Text = "Cadastro de Veículos";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -239,5 +263,7 @@
         private Button btnCadastraVeiculo;
         private Button btnCancelarCadastro;
         private Button btnLimparForm;
+        private Button btnBuscar;
+        private Button btnExcluir;
     }
 }
